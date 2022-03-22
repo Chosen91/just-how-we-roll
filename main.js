@@ -30,6 +30,9 @@ const sortByNumber = function(arr) {
  * YOUR CODE BELOW *
  *******************/
 
+ const singleImage = function (roll) {
+  return `./images/d6/${roll}.png`;
+};
 
 
 /*******************
@@ -42,7 +45,8 @@ const sortByNumber = function(arr) {
 /******************
  * RESET FUNCTION *
  ******************/
-
+ for (const button of buttons) {
+  button.addEventListener('click', function(event) {
 
 
 /****************************
@@ -54,3 +58,22 @@ const sortByNumber = function(arr) {
 /****************
  * MATH SECTION *
  ****************/
+ const getMean = function (rolls) {
+  let total = 0;
+  for (const roll of rolls) {
+    total += roll;
+  }
+  return (total / rolls.length).toFixed(2);
+};
+
+const getMedian = function (rolls) {
+  const sorted = sortByNumber(rolls);
+  const mid = Math.floor(sorted.length / 2);
+  if (sorted.length % 2 === 0) {
+    return getMean([sorted[mid], sorted[mid - 1]]);
+  } else {
+    return sorted[mid].toFixed(2);
+  }
+}
+}
+}
