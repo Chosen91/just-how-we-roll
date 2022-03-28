@@ -1,79 +1,52 @@
-/**********
- * DATA *
- **********/
+sixe.push(roll);
+console.log(sixes);
 
-const sixes = [];
-const doubleSixes = [];
-const twelves = [];
-const twenties = [];
+d6Mean.innerText = getAverage(sixes);
+d6Median.innerText = getMedian(sixes);
+d6Mode.innerText = getMode(sixes);
 
-/********************
- * HELPER FUNCTIONS *
-********************/
 
-const getRandomNumber = function(max) {
-    const rand = Math.random();
-    const range = rand * max;
-    const result = Math.ceil(range);
-    return result;
+
+function rolldose6One() {
+doubleSixes.push(roll);
+console.log(doubleSixes);
+
+doubleD6Mean.innerText = getAverage(doubleSixes);
+doubleD6Median.innerText = getMedian(doubleSixes);
+doubleD6Mode.innerText = getMode(doubleSixes);
+
+
 }
 
-const sortByNumber = function(arr) {
-  const byNumber = function(item1, item2) {
-    return item1 - item2;
-  }
+function rollDoubleD6Two() {
+doubleSixes.push(roll);
+console.log(doubleSixes);
 
-  return arr.slice().sort(byNumber);
+doubleD6Mean.innerText = getAverage(doubleSixes);
+doubleD6Median.innerText = getMedian(doubleSixes);
+doubleD6Mode.innerText = getMode(doubleSixes);
+
+
 }
 
-/*******************
- * YOUR CODE BELOW *
- *******************/
+function rollD12() {
 
- const singleImage = function (roll) {
-  return `./images/d6/${roll}.png`;
-};
+twelves.push(roll);
+console.log(twelves);
 
+d12Mean.innerText = getAverage(twelves);
+d12Median.innerText = getMedian(twelves);
+d12Mode.innerText = getMode(twelves);
 
-/*******************
- * EVENT LISTENERS *
- *******************/
-
-
-
-
-/******************
- * RESET FUNCTION *
- ******************/
- for (const button of buttons) {
-  button.addEventListener('click', function(event) {
-
-
-/****************************
- * CLICK HANDLING FUNCTIONS *
-****************************/
-
-
-
-/****************
- * MATH SECTION *
- ****************/
- const getMean = function (rolls) {
-  let total = 0;
-  for (const roll of rolls) {
-    total += roll;
-  }
-  return (total / rolls.length).toFixed(2);
-};
-
-const getMedian = function (rolls) {
-  const sorted = sortByNumber(rolls);
-  const mid = Math.floor(sorted.length / 2);
-  if (sorted.length % 2 === 0) {
-    return getMean([sorted[mid], sorted[mid - 1]]);
-  } else {
-    return sorted[mid].toFixed(2);
-  }
 }
-}
+
+function rollD20() {
+
+twenties.push(roll);
+console.log(twenties);
+
+d20Mean.innerText = getAverage(twenties);
+d20Median.innerText = getMedian(twenties);
+d20Mode.innerText = getMode(twenties);
+
 }
